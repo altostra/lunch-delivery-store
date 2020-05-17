@@ -1,0 +1,27 @@
+{
+  "name": "blog_type-validations-examples",
+  "version": "1.0.0",
+  "description": "Usage examples of type-validations",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/altostra/blog_type-validations.git"
+  },
+  "keywords": [
+    "type-validations",
+    "altostra"
+  ],
+  "author": "Altostra Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/altostra/blog_type-validations/issues"
+  },
+  "homepage": "https://github.com/altostra/blog_type-validations#readme",
+  "dependencies": {
+    "@altostra/type-validations": "file:../../delta/type-validations",
+    "typescript": "^3.9.2"
+  }
+}
