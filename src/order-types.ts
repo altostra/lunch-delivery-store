@@ -18,6 +18,14 @@ export interface Pizza {
     size: PizzaSize
 }
 
+export interface Hamburger {
+    type: 'hamburger'
+    doneness: Doneness
+    tomatos?: boolean
+    lettuce?: boolean
+    pickles?: boolean
+}
+
 export interface Topping {
     type: ToppingType
     cover: ToppingCover
@@ -40,14 +48,6 @@ export type PizzaSize =
     | 'L'
     | 'XL'
     | 'XXL'
-
-export interface Hamburger {
-    type: 'hamburger'
-    doneness: Doneness
-    tomatos?: boolean
-    lettuce?: boolean
-    pickles?: boolean
-}
 
 export type Doneness =
     | 'R'

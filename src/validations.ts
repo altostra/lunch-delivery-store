@@ -31,7 +31,7 @@ const isTopping = objectOf({
 const isPizza = objectOf<Pizza>({
     type: is('pizza'),
     toppings: arrayOf(isTopping),
-    size: enumOf<PizzaSize>('S', 'M', 'L', 'XL', 'XXL')
+    size: enumOf<PizzaSize>('S', 'M', 'L', 'XL', 'XXL'),
 })
 
 const isHamburger = objectOf<Hamburger>({
@@ -51,11 +51,18 @@ const isHamburger = objectOf<Hamburger>({
 const isFoodOrder = anyOf(isPizza, isHamburger)
 
 const isServing = objectOf<Serving>({
-    quantity: number,
+    quantity: isQuantity,
     dish: isFoodOrder,
+
 })
 
 export const isOrder = objectOf<Order>({
     address: string,
     servings: arrayOf(isServing)
 })
+
+function isQuantity(value: unknown) {
+    return typeof value === 'number' &&
+        value > 0 &&
+        Number.isInteger(value)
+}
