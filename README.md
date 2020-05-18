@@ -1,2 +1,2 @@
-# Type-validations
-Code examples for type-validations library
+# The lunch delivery store
+Code examples from [type-validation medium post](https://medium.com/p/3d6446107740).
