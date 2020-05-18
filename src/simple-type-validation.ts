@@ -1,18 +1,17 @@
 import { Order } from './order-types'
-import { arrayOf, objectOf } from '@altostra/type-validations'
-import { any, string } from '@altostra/type-validations/lib/primitives'
+import { arrayOf, objectOf, primitives } from '@altostra/type-validations'
 
 interface Request {
-    getBody: <T>() => Promise<T>
+    body: any
 }
 
 const isOrder = objectOf({
-    address: string,
-    servings: arrayOf(any),
+    address: primitives.string,
+    servings: arrayOf(primitives.any),
 })
 
 export async function handler(req: Request) {
-    const order: unknown = await req.getBody<unknown>()
+    const order: unknown = req.body
 
     if (!isOrder(order)) {
         throw new Error('Invalid order')

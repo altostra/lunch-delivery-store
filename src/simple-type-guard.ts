@@ -1,11 +1,11 @@
 import { Order } from './order-types'
 
 interface Request {
-    getBody: <T>() => Promise<T>
+    body: any
 }
 
 export async function handler(req: Request) {
-    const order = await req.getBody<unknown>()
+    const order: unknown = req.body
 
     if (!isOrder(order)) {
         throw new Error('Invalid order')
